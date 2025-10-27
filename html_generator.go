@@ -322,7 +322,7 @@ func generateHtml(planData interface{}) string {
         </div>
     </div>
     <div class="promo-message">
-        Want to visualize your Terraform plan and state changes over time, enriched with pricing API data and drift detection?<br>
+        Want to visualize your Terraform plan and state changes over time and link them to your git history?<br>
         <a href="https://cloudvic.com" class="promo-link">Try CloudVIC</a>
     </div>
 </body>
@@ -360,6 +360,11 @@ func extractResourceChanges(planMap map[string]interface{}) []map[string]interfa
 					// Check if this resource also appears in drift (indicating replace)
 					if contains(driftAddresses, address) && actions[0] == "create" {
 						// Mark as replace operation
+						changeMap["_is_replace"] = true
+					}
+
+					// Also check if actions contain both create and delete (direct replace)
+					if len(actions) == 2 && contains(actions, "create") && contains(actions, "delete") {
 						changeMap["_is_replace"] = true
 					}
 					changes = append(changes, changeMap)
