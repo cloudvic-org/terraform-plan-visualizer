@@ -1,4 +1,4 @@
-name: 'Terraform Plan Visualizer'
+name: 'CloudVIC Terraform Plan Visualizer'
 description: 'Generate interactive HTML visualizations from Terraform plan JSON files'
 author: 'CloudVIC'
 homepage: 'https://cloudvic.com'
