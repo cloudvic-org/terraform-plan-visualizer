@@ -1,4 +1,4 @@
-name: 'Free, Collapsible Terraform Plan Visualizer'
+name: 'Browse Terraform Plans as Interactive HTML'
 description: 'Generate interactive HTML visualizations from Terraform plan JSON files'
 author: 'CloudVIC'
 homepage: 'https://cloudvic.com'
